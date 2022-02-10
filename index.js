@@ -3,6 +3,8 @@ import {Heartbeat} from './heartbeat.js';
 const OPENCV_URI = "https://docs.opencv.org/master/opencv.js";
 const HAARCASCADE_URI = "haarcascade_frontalface_alt.xml"
 
+const startButton = document.getElementById("startButton");
+
 // Load opencv when needed
 async function loadOpenCv(uri) {
   return new Promise(function(resolve, reject) {
@@ -28,10 +30,10 @@ async function loadOpenCv(uri) {
 let demo = new Heartbeat("webcam", "canvas", HAARCASCADE_URI, 30, 6, 250);
 var ready = loadOpenCv(OPENCV_URI);
 ready.then(function() {
-  // startButton = document.getElementById("startButton");
-  // startButton.style.display = "block";
 
-  // startButton.addEventListener("click", function() {
+  startButton.style.display = "block";
+
+  startButton.addEventListener("click", function() {
   demo.init();
   });
-// });
+});

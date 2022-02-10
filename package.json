@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@avihimsa/heart-rate-variability-analysis": "^0.1.2"
+  }
+}

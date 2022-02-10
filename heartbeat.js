@@ -10,7 +10,10 @@ const MIN_CORNERS = 5;
 const QUALITY_LEVEL = 0.01;
 const MIN_DISTANCE = 10;
 
+// Simon's additions
 const bpmArray = [];
+// var calculateHRV = require('@avihimsa/heart-rate-variability-analysis')
+import { Time, Geometric } from "@avihimsa/heart-rate-variability-analysis"
 
 // Simple rPPG implementation in JavaScript
 // - Code could be improved given better documentation available for opencv.js
@@ -310,6 +313,11 @@ export class Heartbeat {
         document.getElementById('showBpm').innerHTML = bpm.toFixed(0);
         bpmArray.push(bpm.toFixed(0));
         document.getElementById('showBpmArray').innerHTML = bpmArray;
+
+        // bpmArray = [54,66,54,76,34,55,64,57,86]
+        const RMsSD = Time.RMsSD(bpmArray)
+        console.log(RMsSD);
+        document.getElementById('showRMsSD').innerHTML = RMsSD.toFixed(2);
 
         // Draw BPM
         this.drawBPM(bpm);
