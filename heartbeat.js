@@ -319,7 +319,7 @@ export class Heartbeat {
           for (let i = 0; i < array.length; i++) {
             sum += Math.pow(array[i], 2);
           }
-          return Math.sqrt(sum);
+          return Math.sqrt(sum / array.length);
         }
 
         const RMsSD = getMeanOfSquares(bpmArray);
