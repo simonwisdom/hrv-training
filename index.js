@@ -28,5 +28,10 @@ async function loadOpenCv(uri) {
 let demo = new Heartbeat("webcam", "canvas", HAARCASCADE_URI, 30, 6, 250);
 var ready = loadOpenCv(OPENCV_URI);
 ready.then(function() {
+  // startButton = document.getElementById("startButton");
+  // startButton.style.display = "block";
+
+  // startButton.addEventListener("click", function() {
   demo.init();
-});
+  });
+// });
