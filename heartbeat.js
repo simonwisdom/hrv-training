@@ -316,6 +316,7 @@ export class Heartbeat {
         // bpmArray = [54,66,54,76,34,55,64,57,86]
         function getMeanOfSquares(array) {
           let sum = 0;
+          let rr_interval;
           for (let i = 1; i < array.length; i++) {
             rr_interval = array[i] - array[i-1];
             sum += Math.pow(rr_interval, 2);
